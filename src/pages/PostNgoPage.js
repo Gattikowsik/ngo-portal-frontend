@@ -1,5 +1,6 @@
 // src/pages/PostNgoPage.js
 import React, { useState } from 'react';
+import './PostNgoPage.css';
 
 const PostNgoPage = () => {
   const [ngoName, setNgoName] = useState('');
