@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faBook, faLeaf } from '@fortawesome/free-solid-svg-icons';
 import './HomePage.css';
+import Footer from '../components/layout/Footer';
 
 const HomePage = () => {
   return (
@@ -53,6 +54,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

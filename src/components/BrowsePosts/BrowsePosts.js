@@ -33,35 +33,35 @@ const initialNgos = [
   },
 ];
 
-const BrowseNGOs = () => {
+const BrowsePosts = () => {
   // State to hold the values from the search inputs
-  const [ngoType, setNgoType] = useState('');
+  const [postType, setPostType] = useState('');
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
   
-  // State to hold the list of NGOs to display
-  const [ngos, setNgos] = useState(initialNgos);
+  // State to hold the list of posts to display
+  const [posts, setPosts] = useState(initialNgos);
 
   // Function to handle the search button click
   const handleSearch = () => {
-    console.log('Searching for:', { ngoType, keyword, location });
+    console.log('Searching for:', { postType, keyword, location });
     // In a real application, you would use these state values
-    // to filter the 'ngos' array or make an API call to your backend.
-    alert(`Searching for:\nType: ${ngoType}\nKeyword: ${keyword}\nLocation: ${location}`);
+    // to filter the 'posts' array or make an API call to your backend.
+    alert(`Searching for:\nType: ${postType}\nKeyword: ${keyword}\nLocation: ${location}`);
   };
 
   return (
     <div className="browse-ngos-container">
-      <h1>Browse NGOs</h1>
+      <h1>Browse Posts</h1>
 
       {/* Search Section */}
       <div className="search-bar">
-        <select value={ngoType} onChange={(e) => setNgoType(e.target.value)}>
-          <option value="">Organisation Type</option>
-          <option value="Education">Education</option>
-          <option value="Environment">Environment</option>
-          <option value="Healthcare">Healthcare</option>
-          <option value="Animal Welfare">Animal Welfare</option>
+        <select value={postType} onChange={(e) => setPostType(e.target.value)}>
+          <option value="">Post Type</option>
+          <option value="Event">Event</option>
+          <option value="Volunteer">Volunteer</option>
+          <option value="Donation">Donation</option>
+          <option value="Campaign">Campaign</option>
         </select>
           <input
             type="text"
@@ -78,14 +78,14 @@ const BrowseNGOs = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      {/* NGO List Section */}
+      {/* Posts List Section */}
       <div className="ngo-list">
-        {ngos.map((ngo) => (
-          <div key={ngo.id} className="ngo-card">
-            <h3>{ngo.name}</h3>
-            <p className="ngo-type">{ngo.type}</p>
-            <p className="ngo-location">📍 {ngo.location}</p>
-            <p className="ngo-description">{ngo.description}</p>
+        {posts.map((post) => (
+          <div key={post.id} className="ngo-card">
+            <h3>{post.name}</h3>
+            <p className="ngo-type">{post.type}</p>
+            <p className="ngo-location">📍 {post.location}</p>
+            <p className="ngo-description">{post.description}</p>
             <button className="details-button">View Details</button>
           </div>
         ))}
